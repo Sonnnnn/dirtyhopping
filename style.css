@@ -1,0 +1,27 @@
+
+body {
+    font-family: 'Kanit', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #66462F;
+    margin: 1em;
+}
+
+
+#cta {
+    background-color: #66462F;
+    color: white;
+    font-size: medium;
+}
+
+
+#map {
+height: 100%;
+}
