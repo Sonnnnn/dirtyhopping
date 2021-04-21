@@ -1,9 +1,40 @@
-
 let map;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },  
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 13.791719778722221, lng: 100.54841712959141 }, 
     zoom: 15,
+  });
+  const request = {
+    placeId: "ChIJf4msdhud4jARi0uVOJwWefc",
+    fields: ["name", "formatted_address", "place_id", "geometry"],
+  };
+  const infowindow = new google.maps.InfoWindow();
+  const service = new google.maps.places.PlacesService(map);
+  service.getDetails(request, (place, status) => {
+    if (
+      status === google.maps.places.PlacesServiceStatus.OK &&
+      place &&
+      place.geometry &&
+      place.geometry.location
+    ) {
+      const marker = new google.maps.Marker({
+        map,
+        position: place.geometry.location,
+      });
+      google.maps.event.addListener(marker, "click", function () {
+        infowindow.setContent(
+          "<div><strong>" +
+            place.name +
+            "</strong><br>" +
+            "Place ID: " +
+            place.place_id +
+            "<br>" +
+            place.formatted_address +
+            "</div>"
+        );
+        infowindow.open(map, this);
+      });
+    }
   });
 }
