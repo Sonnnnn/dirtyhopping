@@ -16,7 +16,7 @@ table.select({maxRecords: 100, view: "Grid view"}).eachPage(
   });
   fetchNextPage();
   }
-}, function done(err) {
+  , function done(err) {
   if (err) { console.error(err); return; }
 });
 
