@@ -9,16 +9,22 @@ var base = Airtable({apiKey: 'keyqBkxeEokhp8v71'}).base('appSb8rYBk8f1qWcj');
 
 var table = base('CafeList');
 
-table.select({maxRecords: 100, view: "Grid view"}).eachPage(
-  function page(records, fetchNextPage) {
-    records.forEach(function(record) {
-      console.log('Retrieved', record.get('Place ID'));
-  });
-  fetchNextPage();
-  }
-  , function done(err) {
-  if (err) { console.error(err); return; }
-});
+var getRecords = async () => {
+  const records = await table.select().firstPage();
+  console.log(records);
+};
+
+
+// table.select({maxRecords: 100, view: "Grid view"}).eachPage(
+//   function page(records, fetchNextPage) {
+//     records.forEach(function(record) {
+//       console.log('Retrieved', record.get('Place ID'));
+//   });
+//   fetchNextPage();
+//   }
+//   , function done(err) {
+//   if (err) { console.error(err); return; }
+// });
 
 
 // Google Map API
