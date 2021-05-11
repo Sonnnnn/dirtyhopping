@@ -1,5 +1,5 @@
 {
-  "name": "ts-webpack-googlemaps-sample",
+  "name": "airtable-dirty",
   "scripts": {
     "build": "webpack --config ./webpack.prod.js --mode production",
     "dev": "webpack-cli serve --config ./webpack.dev.js",
@@ -36,5 +36,21 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^4.0.0-beta.2",
     "webpack-merge": "^5.7.3"
-  }
+  },
+  "dependencies": {
+    "airtable": "^0.11.0"
+  },
+  "description": "Look at my prototype here https://www.figma.com/proto/QezxPpDdUG95VFRgkqxAUO/Dirty-Hopping?node-id=1%3A2&scaling=min-zoom",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sonnnnn/dirtyhopping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sonnnnn/dirtyhopping/issues"
+  },
+  "homepage": "https://github.com/Sonnnnn/dirtyhopping#readme"
 }
